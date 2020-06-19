@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Location Picker Ibnux</string>
+    <string name="label_btn_cari_lokasi">CARI LOKASI</string>
+    <string name="label_et_negara">Negara</string>
+    <string name="label_et_provinsi">Provinsi</string>
+    <string name="label_et_kabupaten">Kabupaten / Kota</string>
+    <string name="label_et_kecamatan">Kecamatan</string>
+    <string name="label_et_desa">Desa / Kelurahan</string>
+    <string name="label_et_jalan">Nama Jalan</string>
+    <string name="label_et_alamat">Alamat Lengkap</string>
+    <string name="label_tv_info_lokasi">INFORMASI LOKASI</string>
+    <string name="string_space">\u0020</string>
 </resources>

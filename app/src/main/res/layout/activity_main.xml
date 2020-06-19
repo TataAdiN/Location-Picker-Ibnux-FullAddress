@@ -1,52 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg_grey"
-        tools:context="com.tataadin.my.id.locationpickeribnux.views.MainActivity">
-
-    <TextView
-            android:id="@+id/header_info_lokasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:text="INFORMASI LOKASI"/>
-
-    <androidx.cardview.widget.CardView
-            android:layout_below="@id/header_info_lokasi"
+        android:background="@color/bg_grey">
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            card_view:cardCornerRadius="5dp"
-            card_view:cardElevation="1dp"
-            card_view:cardBackgroundColor="#FFFFFF">
-        <LinearLayout
+            tools:context="com.tataadin.my.id.locationpickeribnux.views.MainActivity">
+
+        <TextView
+                android:id="@+id/header_info_lokasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:text="@string/label_tv_info_lokasi"/>
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/card_informasi"
+                android:layout_below="@id/header_info_lokasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="1dp"
+                card_view:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_alamat"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAlamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Hello World"/>
-    <Button
-            android:id="@+id/btnCariLokasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:text="CARI LOKASI"/>
-</RelativeLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_jalan"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJalan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_desa"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDesa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_kecamatan"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etKecamatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_kabupaten"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etKabupaten"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_provinsi"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etProvinsi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_et_negara"
+                        app:errorEnabled="true"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/colorAccent"
+                        app:boxStrokeColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNegara"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:text="@string/string_space"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+                android:id="@+id/btnCariLokasi"
+                android:layout_below="@+id/card_informasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:text="@string/label_btn_cari_lokasi"/>
+    </RelativeLayout>
+</ScrollView>

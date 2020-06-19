@@ -1,5 +1,9 @@
 # 19 Juni 2020
 
+**15:00**
+* fix view 
+* fix bindView
+
 **09:00**
 * prepare view projek
 * implement material.io

@@ -8,8 +8,9 @@ import android.location.Geocoder;
 import android.util.Log;
 import android.view.View;
 import com.ibnux.locationpicker.LocationPickerActivity;
+import com.tataadin.my.id.locationpickeribnux.databinding.ActivityMainBinding;
 import com.tataadin.my.id.locationpickeribnux.models.BaseValue;
-import com.tataadin.my.locationpickeribnux.databinding.ActivityMainBinding;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -39,30 +40,25 @@ public class Main implements View.OnClickListener{
         double longitude = Double.parseDouble(lon);
 
         Geocoder geocoder = new Geocoder(appContext, Locale.getDefault());
-        String result = null;
         try {
             List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
             if (addressList != null && addressList.size() > 0) {
                 Address address = addressList.get(0);
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
-                    sb.append("\n");
-                    sb.append(address.getAddressLine(i)).append(" : Alamat Full\n");
-                }
-                sb.append(address.getLocality()).append(" : Kecamatan\n");
-                sb.append(address.getPostalCode()).append(" : Kode Pos\n");
-                sb.append(address.getAdminArea()).append(" : Provinsi\n");
-                sb.append(address.getSubAdminArea()).append(" : Kabupaten\n");
-                sb.append(address.getCountryName()).append(" : Negara\n");
-                sb.append(address.getSubLocality()).append(" : Desa/Keluarahan\n");
-                sb.append(address.getThoroughfare()).append(" : Jalan\n");
-                result = sb.toString();
+                bindView(address);
             }
         } catch (IOException e) {
             Log.e("Location Address Loader", "Unable connect to Geocoder", e);
-        } finally {
-            Log.d("LOKASI", result);
         }
+    }
+
+    private void bindView(Address address){
+        binding.etAlamat.setText(address.getAddressLine(0));
+        binding.etJalan.setText(address.getThoroughfare());
+        binding.etDesa.setText(address.getSubLocality());
+        binding.etKecamatan.setText(address.getLocality());
+        binding.etKabupaten.setText(address.getSubAdminArea());
+        binding.etProvinsi.setText(address.getAdminArea());
+        binding.etNegara.setText(address.getCountryName());
     }
 
     @Override

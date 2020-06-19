@@ -5,7 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.tataadin.my.id.locationpickeribnux.controllers.Main;
-import com.tataadin.my.locationpickeribnux.databinding.ActivityMainBinding;
+import com.tataadin.my.id.locationpickeribnux.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
     private Main controlMain;
